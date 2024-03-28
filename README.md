@@ -4,6 +4,12 @@ ubuntu 上使用 gcc+cmake+gcc_arm_none_eabi 编译 STM32 项目的示例项目�
 
 可以使用 LL HAL。
 
+## 依赖
+
+```sh
+sudo apt install gcc-arm-none-eabi
+```
+
 ## 使用说明
 
 ### 仿照此项目建立 stm32 项目的步骤
