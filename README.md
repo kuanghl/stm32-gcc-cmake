@@ -29,7 +29,7 @@ git clone git@github.com:kuanghl/stm32-gcc-cmake.git
 cd stm32-gcc-cmake
 make
 
-# case 2 自购建
+# case 2 自构建
 mkdir stm32-demo && cd stm32-demo
 git clone https://github.com/ObKo/stm32-cmake.git
 cd stm32-cmake && git checkout -b old 6a0d25571178c89b75c46c831e54fe279600353d
@@ -58,7 +58,6 @@ mkdir build && cd build && cmake .. && make -j8
 ├── .git            # 表示为项目目录创建了一个 git 仓库
 │   └── ...         #
 ├── .gitignore      # 指定 git 仓库的排除路径，主要是 `build/`
-├── .gitmodules     # 指定 git 子模块
 ├── CMakeLists.txt  # 指定项目编译方式
 ├── src             # 源文件放在这个目录下
 │   ├── library.h   #
