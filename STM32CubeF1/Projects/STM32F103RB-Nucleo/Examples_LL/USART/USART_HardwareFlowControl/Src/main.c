@@ -9,12 +9,13 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -38,7 +39,7 @@
 __IO uint8_t ubButtonPress = 0;
 
 /**
-  * @brief Variables used for character transmission to PC Com port
+  * @brief Variables used for character tranmission to PC Com port
   */
 __IO uint8_t ubSend = 0;
 const uint8_t aStringToSend[] = "STM32F1xx USART LL API Example : TX/RX in IT mode\r\nConfiguration UART 115200 bps, 8 data bit/1 stop bit/No parity/HW flow control enabled.\r\nEnter any character (S or s will end program).\r\n";
@@ -514,3 +515,5 @@ void assert_failed(uint8_t *file, uint32_t line)
 /**
   * @}
   */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

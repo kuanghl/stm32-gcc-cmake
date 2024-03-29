@@ -9,17 +9,18 @@
   *          This file contains:
   *           - Data structures and the address mapping for all peripherals
   *           - Peripheral's registers declarations and bits definition
-  *           - Macros to access peripheral's registers hardware
+  *           - Macros to access peripheral’s registers hardware
   *  
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2017-2021 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -1636,7 +1637,7 @@ typedef struct
 #define RCC_BDCR_RTCSEL_0                    (0x1UL << RCC_BDCR_RTCSEL_Pos)     /*!< 0x00000100 */
 #define RCC_BDCR_RTCSEL_1                    (0x2UL << RCC_BDCR_RTCSEL_Pos)     /*!< 0x00000200 */
 
-/*!< RTC configuration */
+/*!< RTC congiguration */
 #define RCC_BDCR_RTCSEL_NOCLOCK              0x00000000U                       /*!< No clock */
 #define RCC_BDCR_RTCSEL_LSE                  0x00000100U                       /*!< LSE oscillator clock used as RTC clock */
 #define RCC_BDCR_RTCSEL_LSI                  0x00000200U                       /*!< LSI oscillator clock used as RTC clock */
@@ -3622,7 +3623,7 @@ typedef struct
 #define ADC_CR2_DMA                         ADC_CR2_DMA_Msk                    /*!< ADC DMA transfer enable */
 #define ADC_CR2_ALIGN_Pos                   (11U)                              
 #define ADC_CR2_ALIGN_Msk                   (0x1UL << ADC_CR2_ALIGN_Pos)        /*!< 0x00000800 */
-#define ADC_CR2_ALIGN                       ADC_CR2_ALIGN_Msk                  /*!< ADC data alignment */
+#define ADC_CR2_ALIGN                       ADC_CR2_ALIGN_Msk                  /*!< ADC data alignement */
 
 #define ADC_CR2_JEXTSEL_Pos                 (12U)                              
 #define ADC_CR2_JEXTSEL_Msk                 (0x7UL << ADC_CR2_JEXTSEL_Pos)      /*!< 0x00007000 */
@@ -5292,7 +5293,7 @@ typedef struct
 /*                                                                            */
 /******************************************************************************/
 /*
- * @brief Specific device feature definitions (not present on all devices in the STM32F1 series)
+ * @brief Specific device feature definitions (not present on all devices in the STM32F1 serie)
  */
 #define SPI_I2S_SUPPORT       /*!< I2S support */
 #define SPI_CRC_ERROR_WORKAROUND_FEATURE
@@ -6500,4 +6501,5 @@ typedef struct
 #endif /* __STM32F101xE_H */
   
   
-
+  
+  /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

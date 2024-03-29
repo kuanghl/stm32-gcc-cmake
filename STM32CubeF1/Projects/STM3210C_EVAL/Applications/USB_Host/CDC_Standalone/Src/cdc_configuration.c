@@ -6,12 +6,13 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2015 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -157,7 +158,7 @@ static void ReturnFromConfigurationMenu(void)
 }
 
 /**
-  * @brief  Initializes Configuration Menu.
+  * @brief  Initiliazes Configuration Menu.
   * @param  None
   * @retval None
   */
@@ -180,7 +181,7 @@ static void ConfigurationMenu_Init(void)
 }
 
 /**
-  * @brief  Sets the CDC demo initial values.
+  * @brief  Sets the CDC demo intial values.
   * @param  None
   * @retval None
   */
@@ -648,3 +649,5 @@ void USBH_CDC_LineCodingChanged(USBH_HandleTypeDef * phost)
 {
   LCD_DbgLog("New CDC Settings applied!\n");
 }
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

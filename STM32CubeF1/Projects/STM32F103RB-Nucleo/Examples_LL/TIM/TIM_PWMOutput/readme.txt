@@ -9,12 +9,13 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   @endverbatim
@@ -50,7 +51,7 @@ Generally speaking this duty cycle is calculated as follows:
 Duty cycle = (CCR1 / ARR) * 100
 
 The timer output channel is mapped on the pin PA.00. You can connect it to
-an oscilloscope to monitor the waveform.
+an oscilliscope to monitor the waveform.
 
 User push-button can be used to change the duty cycle from 0% up to 100% by
 steps of 10%. Duty cycle is periodically measured. It can be observed through
@@ -86,5 +87,5 @@ In order to make the program work, you must do the following :
  - Rebuild all files and load your image into target memory
  - Run the example
 
-
+ * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
  */

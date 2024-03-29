@@ -3,7 +3,7 @@
 ![Tests](https://github.com/ObKo/stm32-cmake/workflows/Tests/badge.svg)
 
 This project is used to develop applications for the STM32 - ST's ARM Cortex-Mx MCUs.
-It uses cmake and GCC, along with newlib (libc), STM32Cube. Supports F0 F1 F2 F3 F4 F7 G0 G4 H7 L0 L1 L4 L5 U5 WB WL device families.
+It uses cmake and GCC, along with newlib (libc), STM32Cube. Supports C0 F0 F1 F2 F3 F4 F7 G0 G4 H7 L0 L1 L4 L5 U5 WB WL device families.
 
 ## Requirements
 
@@ -56,14 +56,14 @@ The most important set of variables which needs to be set can be found in the fo
 These configuration options need to be set for the build process to work properly:
 
 * `STM32_CUBE_<FAMILY>_PATH` - path to STM32Cube directory, where `<FAMILY>` is one
-   of `F0 F1 F2 F3 F4 F7 G0 G4 H7 L0 L1 L4 L5 U5 WB WL` **default**: `/opt/STM32Cube<FAMILY>`
+   of `C0 F0 F1 F2 F3 F4 F7 G0 G4 H7 L0 L1 L4 L5 U5 WB WL` **default**: `/opt/STM32Cube<FAMILY>`
 
 These configuration variables are optional:
 
 * `STM32_TOOLCHAIN_PATH` - where toolchain is located, **default**: `/usr`. Alternatively
   you can add the folder containing the toolchain binaries to the system path. If both are given,
   the `STM32_TOOLCHAIN_PATH` setting takes precedence
-* `TARGET_TRIPLET` - toolchain target triplet, **default**: `arm-none-eabi`
+* `STM32_TARGET_TRIPLET` - toolchain target triplet, **default**: `arm-none-eabi`
 * `FREERTOS_PATH` - Path to the FreeRTOS kernel when compiling with a RTOS. Does not need to be
    specified when using CMSIS
 
@@ -74,7 +74,7 @@ If you have access to a Unix shell, which is the default terminal on Linux, or t
 
 ```sh
 export STM32_TOOLCHAIN_PATH="<ToolchainPath>"
-export TARGET_TRIPLET=arm-none-eabi
+export STM32_TARGET_TRIPLET=arm-none-eabi
 export STM32_CUBE_<FAMILY>_PATH="<PathToCubeRoot>"
 ```
 
@@ -86,7 +86,7 @@ On Windows, you can use a Powershell script `path_helper.ps1`to set up the envir
 
 ```sh
 $env:STM32_TOOLCHAIN_PATH = "<ToolchainPath>"
-$env:TARGET_TRIPLET = arm-none-eabi
+$env:STM32_TARGET_TRIPLET = arm-none-eabi
 $env:STM32_CUBE_<FAMILY>_PATH="<PathToCubeRoot>"
 ```
 

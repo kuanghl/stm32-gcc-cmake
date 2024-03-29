@@ -12,12 +12,13 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -228,7 +229,7 @@ int main(void)
   *           the setting of these parameters is bypassed without error
   *           reporting:
   *           it can be the expected behavior in case of recall of this 
-  *           function to update only a few parameters (which update fulfills
+  *           function to update only a few parameters (which update fullfills
   *           the ADC state).
   *           Otherwise, it is up to the user to set the appropriate error 
   *           reporting in user application.
@@ -264,7 +265,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 series, setting of these features are not             */
+  /*       On this STM32 serie, setting of these features are not             */
   /*       conditioned to ADC state.                                          */
   /*       However, in order to be compliant with other STM32 series          */
   /*       and to show the best practice usages, ADC state is checked.        */
@@ -299,7 +300,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 series, setting of these features are not             */
+  /*       On this STM32 serie, setting of these features are not             */
   /*       conditioned to ADC state.                                          */
   /*       However, ADC state is checked anyway with standard requirements    */
   /*       (refer to description of this function).                           */
@@ -323,7 +324,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 series, setting of these features are not             */
+  /*       On this STM32 serie, setting of these features are not             */
   /*       conditioned to ADC state.                                          */
   /*       However, ADC state is checked anyway with standard requirements    */
   /*       (refer to description of this function).                           */
@@ -342,7 +343,7 @@ void Configure_ADC(void)
     // LL_ADC_REG_SetDMATransfer(ADC1, LL_ADC_REG_DMA_TRANSFER_NONE);
     
     /* Set ADC group regular sequencer */
-    /* Note: On this STM32 series, ADC group regular sequencer is              */
+    /* Note: On this STM32 serie, ADC group regular sequencer is              */
     /*       fully configurable: sequencer length and each rank               */
     /*       affectation to a channel are configurable.                       */
     /*       Refer to description of function                                 */
@@ -363,7 +364,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 series, setting of these features are not             */
+  /*       On this STM32 serie, setting of these features are not             */
   /*       conditioned to ADC state.                                          */
   /*       However, ADC state is checked anyway with standard requirements    */
   /*       (refer to description of this function).                           */
@@ -383,7 +384,7 @@ void Configure_ADC(void)
     // LL_ADC_INJ_SetTrigAuto(ADC1, LL_ADC_INJ_TRIG_INDEPENDENT);
     
     /* Set ADC group injected sequencer */
-    /* Note: On this STM32 series, ADC group injected sequencer is             */
+    /* Note: On this STM32 serie, ADC group injected sequencer is             */
     /*       fully configurable: sequencer length and each rank               */
     /*       affectation to a channel are configurable.                       */
     /*       Refer to description of function                                 */
@@ -404,7 +405,7 @@ void Configure_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 series, setting of these features are not             */
+  /*       On this STM32 serie, setting of these features are not             */
   /*       conditioned to ADC state.                                          */
   /*       However, in order to be compliant with other STM32 series          */
   /*       and to show the best practice usages, ADC state is checked.        */
@@ -421,7 +422,7 @@ void Configure_ADC(void)
   
   /*## Configuration of ADC transversal scope: analog watchdog ###############*/
   
-  /* Note: On this STM32 series, there is only 1 analog watchdog available.    */
+  /* Note: On this STM32 serie, there is only 1 analog watchdog available.    */
   
   /* Set ADC analog watchdog: channels to be monitored */
   // LL_ADC_SetAnalogWDMonitChannels(ADC1, LL_ADC_AWD_DISABLE);
@@ -433,7 +434,7 @@ void Configure_ADC(void)
   
   /*## Configuration of ADC transversal scope: oversampling ##################*/
   
-  /* Note: Feature not available on this STM32 series */
+  /* Note: Feature not available on this STM32 serie */
   
   
   /*## Configuration of ADC interruptions ####################################*/
@@ -471,7 +472,7 @@ void Activate_ADC(void)
   
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 series, setting of these features are not             */
+  /*       On this STM32 serie, setting of these features are not             */
   /*       conditioned to ADC state.                                          */
   /*       However, in order to be compliant with other STM32 series          */
   /*       and to show the best practice usages, ADC state is checked.        */
@@ -553,7 +554,7 @@ void ConversionStartPoll_ADC_GrpRegular(void)
   /* Start ADC group regular conversion */
   /* Note: Hardware constraint (refer to description of the functions         */
   /*       below):                                                            */
-  /*       On this STM32 series, setting of these features are not             */
+  /*       On this STM32 serie, setting of these features are not             */
   /*       conditioned to ADC state.                                          */
   /*       However, in order to be compliant with other STM32 series          */
   /*       and to show the best practice usages, ADC state is checked.        */
@@ -789,3 +790,5 @@ void assert_failed(uint8_t *file, uint32_t line)
 /**
   * @}
   */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

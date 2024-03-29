@@ -1,6 +1,8 @@
 set(STM32_SUPPORTED_FAMILIES_LONG_NAME
+    STM32C0
     STM32F0 STM32F1 STM32F2 STM32F3 STM32F4 STM32F7
     STM32G0 STM32G4
+    STM32H5
     STM32H7_M4 STM32H7_M7
     STM32L0 STM32L1 STM32L4 STM32L5
     STM32U5
@@ -9,7 +11,7 @@ set(STM32_SUPPORTED_FAMILIES_LONG_NAME
 
 foreach(FAMILY ${STM32_SUPPORTED_FAMILIES_LONG_NAME})
     # append short names (F0, F1, H7_M4, ...) to STM32_SUPPORTED_FAMILIES_SHORT_NAME
-    string(REGEX MATCH "^STM32([FGHLMUW]P?[0-9BL])_?(M0PLUS|M4|M7)?" FAMILY ${FAMILY})
+    string(REGEX MATCH "^STM32([CFGHLMUW]P?[0-9BL])_?(M0PLUS|M4|M7)?" FAMILY ${FAMILY})
     list(APPEND STM32_SUPPORTED_FAMILIES_SHORT_NAME ${CMAKE_MATCH_1})
 endforeach()
 list(REMOVE_DUPLICATES STM32_SUPPORTED_FAMILIES_SHORT_NAME)
@@ -34,8 +36,14 @@ if(NOT STM32_TOOLCHAIN_PATH)
 endif()
 
 if(NOT STM32_TARGET_TRIPLET)
-    set(STM32_TARGET_TRIPLET "arm-none-eabi")
-    message(STATUS "No STM32_TARGET_TRIPLET specified, using default: " ${STM32_TARGET_TRIPLET})
+    if(DEFINED ENV{STM32_TARGET_TRIPLET})
+        message(STATUS "Detected target triplet STM32_TARGET_TRIPLET in environmental variables: ")
+        message(STATUS "$ENV{STM32_TARGET_TRIPLET}")
+        set(STM32_TARGET_TRIPLET $ENV{STM32_TARGET_TRIPLET})
+    else()
+        set(STM32_TARGET_TRIPLET "arm-none-eabi")
+        message(STATUS "No STM32_TARGET_TRIPLET specified, using default: " ${STM32_TARGET_TRIPLET})
+    endif()
 endif()
 
 set(CMAKE_SYSTEM_NAME Generic)
@@ -136,7 +144,7 @@ function(stm32_get_chip_info CHIP)
 
     string(TOUPPER ${CHIP} CHIP)
 
-    string(REGEX MATCH "^STM32([FGHLMUW]P?[0-9BL])([0-9A-Z][0-9M][A-Z][0-9A-Z]).*$" CHIP ${CHIP})
+    string(REGEX MATCH "^STM32([CFGHLMUW]P?[0-9BL])([0-9A-Z][0-9M][A-Z][0-9A-Z]).*$" CHIP ${CHIP})
 
     if((NOT CMAKE_MATCH_1) OR (NOT CMAKE_MATCH_2))
         message(FATAL_ERROR "Unknown chip ${CHIP}")
@@ -222,7 +230,7 @@ function(stm32_get_memory_info)
         stm32_get_chip_type(${INFO_FAMILY} ${INFO_DEVICE} INFO_TYPE)
     endif()
 
-    string(REGEX REPLACE "^[FGHLMUW]P?[0-9BL][0-9A-Z][0-9M].([3468ABCDEFGHIYZ])$" "\\1" SIZE_CODE ${INFO_DEVICE})
+    string(REGEX REPLACE "^[CFGHLMUW]P?[0-9BL][0-9A-Z][0-9M].([3468ABCDEFGHIYZ])$" "\\1" SIZE_CODE ${INFO_DEVICE})
 
     if(SIZE_CODE STREQUAL "3")
         set(FLASH "8K")
@@ -374,6 +382,7 @@ if(NOT (TARGET STM32::Nano::FloatScan))
 endif()
 
 include(stm32/utilities)
+include(stm32/c0)
 include(stm32/f0)
 include(stm32/f1)
 include(stm32/f2)
@@ -382,6 +391,7 @@ include(stm32/f4)
 include(stm32/f7)
 include(stm32/g0)
 include(stm32/g4)
+include(stm32/h5)
 include(stm32/h7)
 include(stm32/l0)
 include(stm32/l1)

@@ -6,12 +6,13 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                       opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -92,7 +93,7 @@ extern "C" {
 #define IS_FSMC_NORSRAM_EXTENDED_DEVICE(__INSTANCE__) ((__INSTANCE__) == FSMC_NORSRAM_EXTENDED_DEVICE)
 
 #endif /* FSMC_BANK1 */
-#if  defined(FSMC_BANK3)
+#if defined(FSMC_BANK3)
 
 #define IS_FSMC_NAND_BANK(__BANK__) ((__BANK__) == FSMC_NAND_BANK3)
 #define IS_FSMC_WAIT_FEATURE(__FEATURE__) (((__FEATURE__) == FSMC_NAND_PCC_WAIT_FEATURE_DISABLE) || \
@@ -287,7 +288,7 @@ typedef struct
                                         delay between ALE low and RE low.
                                         This parameter can be a number between Min_Data = 0 and Max_Data = 255 */
 } FSMC_NAND_InitTypeDef;
-#endif /* FSMC_BANK3 */
+#endif
 
 #if defined(FSMC_BANK3) || defined(FSMC_BANK4)
 /**
@@ -339,7 +340,7 @@ typedef struct
                                         delay between ALE low and RE low.
                                         This parameter can be a number between Min_Data = 0 and Max_Data = 255 */
 }FSMC_PCCARD_InitTypeDef;
-#endif /* FSMC_BANK4 */
+#endif
 
 /**
   * @}
@@ -550,7 +551,7 @@ typedef struct
   */
 #if defined(FSMC_BANK4)
 #define FSMC_PCR_MEMORY_TYPE_PCCARD              (0x00000000U)
-#endif /* FSMC_BANK4 */
+#endif
 #define FSMC_PCR_MEMORY_TYPE_NAND                (0x00000008U)
 /**
   * @}
@@ -590,7 +591,7 @@ typedef struct
 /**
   * @}
   */
-#endif /* FSMC_BANK3 || FSMC_Bank4 */
+#endif /* FSMC_BANK3 */
 
 
 /** @defgroup FSMC_LL_Interrupt_definition FSMC Low Layer Interrupt definition
@@ -600,7 +601,7 @@ typedef struct
 #define FSMC_IT_RISING_EDGE                      (0x00000008U)
 #define FSMC_IT_LEVEL                            (0x00000010U)
 #define FSMC_IT_FALLING_EDGE                     (0x00000020U)
-#endif /* FSMC_BANK3 || FSMC_Bank4 */
+#endif /* FSMC_BANK3 */
 /**
   * @}
   */
@@ -613,7 +614,7 @@ typedef struct
 #define FSMC_FLAG_LEVEL                          (0x00000002U)
 #define FSMC_FLAG_FALLING_EDGE                   (0x00000004U)
 #define FSMC_FLAG_FEMPT                          (0x00000040U)
-#endif /* FSMC_BANK3 || FSMC_Bank4 */
+#endif /* FSMC_BANK3 */
 /**
   * @}
   */
@@ -686,7 +687,7 @@ typedef struct
 /**
   * @}
   */
-#endif /* FSMC_BANK3 */
+#endif
 
 #if defined(FSMC_BANK4)
 /** @defgroup FSMC_LL_PCCARD_Macros FMC PCCARD Macros
@@ -960,3 +961,5 @@ HAL_StatusTypeDef  FSMC_PCCARD_DeInit(FSMC_PCCARD_TypeDef *Device);
 #endif
 
 #endif /* STM32F1xx_LL_FSMC_H */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

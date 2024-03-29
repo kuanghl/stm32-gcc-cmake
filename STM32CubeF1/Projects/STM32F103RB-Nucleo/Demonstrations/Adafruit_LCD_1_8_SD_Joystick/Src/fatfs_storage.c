@@ -6,12 +6,13 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2016 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -77,16 +78,16 @@ uint32_t Storage_OpenReadFile(uint8_t Xpoz, uint16_t Ypoz, const char *BmpName)
     /* Get the number of bytes which can be stored inside the buffer */
     nbbytetoread = MIN(size,nbline*pbmpheader->w*2);
   
-    /* Adapt the total size of the bitmap, stored inside the header, to this chunk */
+    /* Adapt the total size of the bitmap, stored inside the header, to this chunck */
     pbmpheader->fsize = pbmpheader->offset + nbbytetoread;
   
-    /* Adapt the number of line, stored inside the header, to this chunk */
+    /* Adapt the number of line, stored inside the header, to this chunck */
     pbmpheader->h = nbbytetoread/(pbmpheader->w*2);
     
     /* Start reading at the end of the file */
     f_lseek(&bmpfile, pbmpheader->offset + size - nbbytetoread);
     
-    /* Store this chunk (or the entire part if possible) of the file inside a buffer */
+    /* Store this chunck (or the entire part if possible) of the file inside a buffer */
     f_read(&bmpfile, aBuffer + pbmpheader->offset, nbbytetoread, &BytesRead);
   
     /* Draw the bitmap */
@@ -231,3 +232,5 @@ uint8_t Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferLength)
   
   return ret;
 }
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
