@@ -17,7 +17,8 @@ https://github.com/STMicroelectronics/STM32CubeF1.git
 STM32CubeF1 : c750eab6990cac35ab05020793b0221ecc1a8ce5
 stm32-cmake : 6a0d25571178c89b75c46c831e54fe279600353d
 
-# !!! STM32CubeF1 STM32CubeFxx后续版本不支持stm32-cmake
+# !!! STM32CubeF1 STM32CubeFxx后续版本需要处理子模块
+git clone --recursive https://github.com/STMicroelectronics/STM32CubeF1.git
 ```
 
 ## 使用说明
@@ -25,7 +26,7 @@ stm32-cmake : 6a0d25571178c89b75c46c831e54fe279600353d
 ### 构建
 ```sh
 # case 1 直接使用
-git clone git@github.com:kuanghl/stm32-gcc-cmake.git
+git clone --recursive git@github.com:kuanghl/stm32-gcc-cmake.git
 cd stm32-gcc-cmake
 make
 
