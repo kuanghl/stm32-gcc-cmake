@@ -1,0 +1,3 @@
+- [gcc-arm-none-eabi](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain)
+- [openocd](https://github.com/openocd-org/openocd.git)
+- [riscv-none-elf-gcc](https://github.com/xpack-dev-tools)

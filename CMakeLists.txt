@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.16) # 判定 cmake 版本符合要求，stm32-cmake 模块本身要求至少 3.16
 
+set(CMAKE_BUILD_TYPE "Debug")   # 设置编译模式
+
+set(STM32_TOOLCHAIN_PATH ${CMAKE_CURRENT_SOURCE_DIR}/tool_chain/xpm_packets/xpacks/.bin)    # 设置编译器路径
+set(STM32_TARGET_TRIPLET arm-none-eabi)                                                     # 设置编译器名称            
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/stm32-cmake/cmake/stm32_gcc.cmake)  # 引用 stm32-cmake
 
 project(stm32_test CXX C ASM)        # 设定项目名字和支持语言

@@ -7,7 +7,34 @@ ubuntu上使用gcc + cmake + gcc_arm_none_eabi编译STM32项目的示例项目�
 ## 依赖
 
 ```sh
-sudo apt install gcc-arm-none-eabi
+# vscode插件
+Cortex-Debug
+C/C++
+C/C++ Extension Pack
+CMake
+CMake Tools
+
+# # 编译器和烧录软件
+# # sudo apt install gdb-multiarch
+# # ln -s /usr/bin/gdb-multiarch /usr/bin/arm-none-eabi-gdb 
+sudo apt install gcc-arm-none-eabi # https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain
+sudo apt install openocd
+# arm-none-eabi-gcc --version
+# arm-none-eabi-g++ --version
+# arm-none-eabi-gdb --version
+# arm-none-eabi-size --version
+
+# xpm compile
+# node更新
+node -v
+sudo npm install n -g
+sudo n stable
+hash -r
+rehash
+npm install --global xpm@latest
+xpm init
+xpm install @xpack-dev-tools/arm-none-eabi-gcc@latest --verbose
+ls -l xpacks/.bin
 
 # repo
 https://github.com/ObKo/stm32-cmake.git
@@ -43,9 +70,26 @@ mkdir build && cd build && cmake .. && make -j8
 ### 烧录
 
 ```sh
-# todo...
-```
+git clone --recursive git@github.com:openocd-org/openocd.git
+cd openocd
+./bootstrap
+./configure -help
+./configure --enable-jlink
+make -j8
+sudo make install
 
+# stlink-v2.cfg对应烧录器，支持的烧录器在/usr/share/openocd/scripts/interface
+# stm32f4x.cfg对应MCU，支持的芯片在/usr/share/openocd/scripts/target
+openocd -f interface/stlink-v2.cfg -f target/stm32f4x.cfg  # 链接到MCU
+telnet localhost 4444 # 通过telnet连接openocd
+program ./test01.hex  # 烧录hex文件
+reset                 # 复位STM32
+exit                  # 关闭连接
+
+# 单独烧录指令
+openocd -f interface/jlink_swd.cfg -f target/stm32f4x.cfg -c init -c halt -c \
+	"program ./build/test01.hex" -c reset -c shutdown
+```
 
 ## Overview
 
